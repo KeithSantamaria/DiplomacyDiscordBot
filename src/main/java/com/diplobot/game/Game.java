@@ -16,10 +16,6 @@ public class Game {
 		return players;
 	}
 
-	public void setPlayers(ArrayList<Player> players) {
-		this.players = players;
-	}
-
 	public int getTotalNumberOfSupplyCenters() {
 		return totalNumberOfSupplyCenters;
 	}
@@ -34,6 +30,17 @@ public class Game {
 			}
 		}
 		return false;
+	}
+
+	public boolean isGameEndByAgreement(){
+		for ( Player player : this.players) {
+			if( player.isStillInGame() ){
+				if ( !player.isWantsToEnd() ){
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 }
