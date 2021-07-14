@@ -4,25 +4,27 @@ import java.util.ArrayList;
 
 public class Game {
 
-	private int totalNumberOfSupplyCenters;
+	private int numberOfSupplyCenters;
+	private int numberOfProvinces;
 	private ArrayList<Player> players;
 
-	public Game( int totalNumberOfSupplyCenters){
+	public Game( int totalNumberOfSupplyCenters, int numberOfProvinces){
 		this.players = new ArrayList<>();
-		this.totalNumberOfSupplyCenters = totalNumberOfSupplyCenters;
+		this.numberOfSupplyCenters = totalNumberOfSupplyCenters;
+		this.numberOfProvinces = numberOfProvinces;
 	}
 
 	public ArrayList<Player> getPlayers() {
 		return players;
 	}
 
-	public int getTotalNumberOfSupplyCenters() {
-		return totalNumberOfSupplyCenters;
+	public int getNumberOfSupplyCenters() {
+		return numberOfSupplyCenters;
 	}
 
 	public boolean isGameEnd(){
 
-		int victoryCount = (this.totalNumberOfSupplyCenters / 2) + 1;
+		int victoryCount = (this.numberOfSupplyCenters / 2) + 1;
 
 		for (Player player : this.players) {
 			if (player.getNumOfSupplyCenters() >= victoryCount ){

@@ -12,7 +12,7 @@ public class GameEndTests {
 
 	@BeforeEach
 	public void beforeEachTest(){
-		testGame = new Game(34);
+		testGame = new Game(34, 75);
 		testGame.getPlayers().add( new Player("Player A", 10) );
 		testGame.getPlayers().add( new Player("Player B", 18) );
 		testGame.getPlayers().add( new Player("Player C", 6 ) );
